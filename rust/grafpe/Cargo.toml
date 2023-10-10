@@ -1,0 +1,38 @@
+[package]
+name = "grafpe"
+version = "0.1.0"
+authors = [""]
+edition = "2018"
+
+[dev-dependencies]
+criterion = "0.2"
+
+[dependencies]
+openssl = { version = "0.10", features = ["vendored"]}
+rand = "0.6"
+hex = "0.3.2"
+nalgebra = "0.16.13"
+itertools = "0.8.0"
+clap = { version = "2.32.0", features = ["yaml"]}
+matrust = { path = "../matrust" }
+regex = "1"
+
+[[bench]]
+name = "bench_build_new_graph"
+harness = false
+
+[[bench]]
+name = "bench_build_graph"
+harness = false
+
+[[bench]]
+name = "bench_crypt"
+harness = false
+
+[[bench]]
+name = "bench_ccn_b"
+harness = false
+
+[[bench]]
+name = "bench_ccn"
+harness = false

@@ -1,0 +1,38 @@
+name: main_crypt
+version: "0.1.0"
+args:
+  - key:
+      short: k
+      long: key
+      help: hex-encoded key used by GraFPE (16 bytes)
+      takes_value: true
+      required: true
+  - tweak:
+      short: t
+      long: tweak
+      help: hex-encoded tweak used by GraFPE (any number of bytes)
+      takes_value: true
+  - perm-file:
+      long: perm-file
+      help: path to a .perm file containing an encoded graph
+      takes_value: true
+  - dot-file:
+      long: dot-file
+      help: path to a .dot file containing an encoded graph
+      takes_value: true
+      conflicts_with: perm-file
+      required: true
+  - walk-length:
+      long: walk-length
+      help: length of the walk performed during encryption and decryption
+      takes_value: true
+      default_value: "70"
+  - wl-from-perm:
+      long: wl-from-perm
+      help: if specified, the walk length will be taken from the specified .perm file
+      takes_value: true
+      conflicts_with: walk-length
+  - decrypt:
+      long: decrypt
+      help: if specified, it makes the algorithm perform decryption instead of encryption
+

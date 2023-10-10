@@ -1,0 +1,41 @@
+name: gen_graph
+version: "0.1.0"
+args:
+  - key:
+      long: key
+      help: hex-encoded key for AES-128-CTR
+      takes_value: true
+      required: true
+  - iv:
+      long: iv
+      help: hex-encoded iv for AES-128-CTR
+      takes_value: true
+      required: true
+  - n:
+      short: n
+      help: number of vertices in the graph
+      takes_value: true
+      required: true
+  - d:
+      short: d
+      help: degree of the graph
+      takes_value: true
+      required: true
+  - export-dot:
+      long: export-dot
+      help: path to the .dot file to export the graph to
+      required: true
+      takes_value: true
+#  - export-grafpe:
+#      long: export-grafpe
+#      help: path to the .grafpe file to export the graph to (if you want to use the graph in the second implementation, you need to use this)
+#      required: true
+#      takes_value: true
+  - new-graph:
+      long: new-graph
+      help: if specified, will generate the new type of graph
+      takes_value: false
+  - walk-length:
+      long: walk-length
+      help: length of the walk (overrides the default)
+      takes_value: true
